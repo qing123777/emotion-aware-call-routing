@@ -1,0 +1,56 @@
+{
+  "run_id": "crema_d_partial_top4",
+  "split": "test",
+  "routing": {
+    "distress": {
+      "escalate_classes": [
+        "ANG",
+        "FEA",
+        "SAD",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP"
+      ],
+      "confusion": {
+        "true_positive": 714,
+        "false_negative": 70,
+        "false_positive": 60,
+        "true_negative": 304
+      },
+      "accuracy": 0.8867595818815331,
+      "balanced_accuracy": 0.8729395604395604,
+      "escalate_recall": 0.9107142857142857,
+      "escalate_precision": 0.9224806201550387,
+      "false_alarm_rate": 0.16483516483516483,
+      "rescued_errors": 224,
+      "introduced_errors": 0
+    },
+    "narrow": {
+      "escalate_classes": [
+        "ANG",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP",
+        "SAD",
+        "FEA"
+      ],
+      "confusion": {
+        "true_positive": 272,
+        "false_negative": 120,
+        "false_positive": 32,
+        "true_negative": 724
+      },
+      "accuracy": 0.867595818815331,
+      "balanced_accuracy": 0.8257747543461829,
+      "escalate_recall": 0.6938775510204082,
+      "escalate_precision": 0.8947368421052632,
+      "false_alarm_rate": 0.042328042328042326,
+      "rescued_errors": 202,
+      "introduced_errors": 0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+# Baseline experiment. Copy this file per experiment; never edit it in place
+# once a run has been recorded against it.
+run_id: baseline_wavlm_lora
+seed: 1337
+
+data:
+  manifest: data/processed/crema_d_manifest.csv
+  window_seconds: 4.0
+  sample_rate: 16000
+  # Training-only augmentation
+  gain_jitter_db: 3.0
+  noise_snr_db: null      # set e.g. 20 to add white noise
+
+model:
+  # Development backbone. Switch to microsoft/wavlm-large for the single final
+  # confirmation run only -- it is ~3x slower per step and would shrink the ablation
+  # grid to roughly a third on Kaggle's 30 GPU-h/week.
+  backbone: microsoft/wavlm-base-plus
+  # The convolutional feature extractor is ALWAYS frozen, under every strategy --
+  # it is not configurable, so there is no key for it here.
+  # one of: full | partial | lora | frozen  -- this is the ablation axis
+  finetune_strategy: lora
+  partial_unfreeze_layers: 4     # used when strategy == partial
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules: ["q_proj", "v_proj"]
+  layer_pooling: weighted  # weighted | last -- ablation axis, weighted is the cheap win
+
+# Trained on CREMA-D's own labels. Arousal, valence and the escalation score are
+# DERIVED from predicted class probabilities at inference time, not trained targets.
+heads:
+  emotion: true            # 6-way classification -- primary target
+  intensity: false         # enable only if the share of "XX" clips is small enough
+  dimensional: false       # out of scope: no freely available corpus has real A/V ratings
+
+loss:
+  emotion_weight: 1.0
+  intensity_weight: 0.3
+  use_class_weights: true
+
+# Inference-time smoothing replaces the trained temporal head (see docs/ARCHITECTURE.md).
+inference:
+  hop_seconds: 1.0         # how often a new window is scored
+  smoothing_alpha: 0.3     # 0 = never update, 1 = no smoothing
+  escalation:
+    caution_on: {threshold: 0.5, sustain_seconds: 3}
+    escalated_on: {threshold: 0.7, sustain_seconds: 5}
+    caution_off: {threshold: 0.4, sustain_seconds: 5}
+    escalated_off: {threshold: 0.6, sustain_seconds: 8}
+
+train:
+  epochs: 10
+  batch_size: 8
+  lr: 1.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  grad_accum_steps: 2
+  fp16: true
+  # Raised 3 -> 5 after lora_e30: at 30 epochs a single unlucky dip (epoch 7 there)
+  # could stop a run below its true best. 3 was tuned for the old 10-epoch budget.
+  early_stopping_patience: 5
+  checkpoint_dir: /content/drive/MyDrive/uccd3094/checkpoints

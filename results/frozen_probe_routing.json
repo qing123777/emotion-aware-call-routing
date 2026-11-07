@@ -1,0 +1,56 @@
+{
+  "run_id": "frozen_probe",
+  "split": "val",
+  "routing": {
+    "distress": {
+      "escalate_classes": [
+        "ANG",
+        "FEA",
+        "SAD",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP"
+      ],
+      "confusion": {
+        "true_positive": 697,
+        "false_negative": 83,
+        "false_positive": 129,
+        "true_negative": 233
+      },
+      "accuracy": 0.8143607705779334,
+      "balanced_accuracy": 0.7686180762147613,
+      "escalate_recall": 0.8935897435897436,
+      "escalate_precision": 0.8438256658595642,
+      "false_alarm_rate": 0.356353591160221,
+      "rescued_errors": 217,
+      "introduced_errors": 0
+    },
+    "narrow": {
+      "escalate_classes": [
+        "ANG",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP",
+        "SAD",
+        "FEA"
+      ],
+      "confusion": {
+        "true_positive": 345,
+        "false_negative": 45,
+        "false_positive": 173,
+        "true_negative": 579
+      },
+      "accuracy": 0.809106830122592,
+      "balanced_accuracy": 0.8272810965630115,
+      "escalate_recall": 0.8846153846153846,
+      "escalate_precision": 0.666023166023166,
+      "false_alarm_rate": 0.2300531914893617,
+      "rescued_errors": 211,
+      "introduced_errors": 0
+    }
+  }
+}

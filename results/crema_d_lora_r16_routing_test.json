@@ -1,0 +1,56 @@
+{
+  "run_id": "crema_d_lora_r16",
+  "split": "test",
+  "routing": {
+    "distress": {
+      "escalate_classes": [
+        "ANG",
+        "FEA",
+        "SAD",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP"
+      ],
+      "confusion": {
+        "true_positive": 702,
+        "false_negative": 82,
+        "false_positive": 125,
+        "true_negative": 239
+      },
+      "accuracy": 0.8196864111498258,
+      "balanced_accuracy": 0.7760007849293564,
+      "escalate_recall": 0.8954081632653061,
+      "escalate_precision": 0.848851269649335,
+      "false_alarm_rate": 0.3434065934065934,
+      "rescued_errors": 243,
+      "introduced_errors": 0
+    },
+    "narrow": {
+      "escalate_classes": [
+        "ANG",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP",
+        "SAD",
+        "FEA"
+      ],
+      "confusion": {
+        "true_positive": 313,
+        "false_negative": 79,
+        "false_positive": 128,
+        "true_negative": 628
+      },
+      "accuracy": 0.8196864111498258,
+      "balanced_accuracy": 0.8145786092214664,
+      "escalate_recall": 0.798469387755102,
+      "escalate_precision": 0.7097505668934241,
+      "false_alarm_rate": 0.1693121693121693,
+      "rescued_errors": 243,
+      "introduced_errors": 0
+    }
+  }
+}

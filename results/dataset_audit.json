@@ -1,0 +1,92 @@
+{
+  "audio_dir": "/content/crema_d/AudioWAV",
+  "files_found": 7442,
+  "files_readable": 7442,
+  "unparsable_filenames": [],
+  "unreadable_files": [],
+  "silent_files": [
+    "1076_MTI_SAD_XX.wav"
+  ],
+  "duplicate_groups": [
+    [
+      "1006_TIE_HAP_XX.wav",
+      "1006_TIE_NEU_XX.wav"
+    ],
+    [
+      "1013_WSI_DIS_XX.wav",
+      "1013_WSI_SAD_XX.wav"
+    ],
+    [
+      "1017_IWW_ANG_XX.wav",
+      "1017_IWW_FEA_XX.wav"
+    ]
+  ],
+  "window_seconds": 4.0,
+  "duration_seconds": {
+    "min": 1.2679375,
+    "p05": 1.8351875,
+    "median": 2.5025,
+    "mean": 2.5428836670249932,
+    "p95": 3.470125,
+    "max": 5.005,
+    "shorter_than_window": 7358,
+    "longer_than_window": 84,
+    "padding_share": 0.36516579464525667
+  },
+  "label_distribution": {
+    "train": {
+      "emotion": {
+        "ANG": 880,
+        "DIS": 880,
+        "FEA": 880,
+        "HAP": 880,
+        "NEU": 752,
+        "SAD": 880
+      },
+      "intensity": {
+        "HI": 315,
+        "LO": 315,
+        "MD": 315,
+        "XX": 4207
+      },
+      "actors": 63,
+      "clips": 5152
+    },
+    "val": {
+      "emotion": {
+        "ANG": 195,
+        "DIS": 195,
+        "FEA": 195,
+        "HAP": 195,
+        "NEU": 167,
+        "SAD": 195
+      },
+      "intensity": {
+        "HI": 70,
+        "LO": 70,
+        "MD": 70,
+        "XX": 932
+      },
+      "actors": 14,
+      "clips": 1142
+    },
+    "test": {
+      "emotion": {
+        "ANG": 196,
+        "DIS": 196,
+        "FEA": 196,
+        "HAP": 196,
+        "NEU": 168,
+        "SAD": 196
+      },
+      "intensity": {
+        "HI": 70,
+        "LO": 70,
+        "MD": 70,
+        "XX": 938
+      },
+      "actors": 14,
+      "clips": 1148
+    }
+  }
+}

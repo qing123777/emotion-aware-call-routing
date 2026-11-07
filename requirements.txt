@@ -1,0 +1,16 @@
+# Core (PyTorch only -- no TensorFlow/Keras, per the assignment brief)
+torch>=2.2
+torchaudio>=2.2
+transformers>=4.40
+peft>=0.10          # LoRA
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+pyyaml>=6.0
+soundfile>=0.12     # audio I/O on Colab/Kaggle
+pandas>=2.0
+matplotlib>=3.8
+tqdm>=4.66
+
+# Local demo interface
+gradio>=6.0

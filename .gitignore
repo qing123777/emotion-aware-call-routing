@@ -1,0 +1,47 @@
+# Datasets and model weights must NEVER be committed.
+# The submission zip is capped at 5MB and must not contain them.
+# Leading slash matters: a bare "data/" would also ignore src/data/.
+/data/
+*.wav
+*.mp4
+*.flac
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+checkpoints/
+
+# Experiment outputs (keep results/*.json and results/master_table.md, drop the rest)
+runs/
+wandb/
+results/**/*.png
+results/**/*.npy
+
+# Local evidence copied back from hosted training runs
+/artifacts/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+
+# Local editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Personal Claude notes (team-shared config in .claude/ IS committed)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Scratch output and local virtual environment
+/tmp/
+/output/
+.venv/

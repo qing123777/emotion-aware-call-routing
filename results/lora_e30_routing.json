@@ -1,0 +1,56 @@
+{
+  "run_id": "lora_e30",
+  "split": "val",
+  "routing": {
+    "distress": {
+      "escalate_classes": [
+        "ANG",
+        "FEA",
+        "SAD",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP"
+      ],
+      "confusion": {
+        "true_positive": 693,
+        "false_negative": 87,
+        "false_positive": 126,
+        "true_negative": 236
+      },
+      "accuracy": 0.8134851138353766,
+      "balanced_accuracy": 0.7701976200594984,
+      "escalate_recall": 0.8884615384615384,
+      "escalate_precision": 0.8461538461538461,
+      "false_alarm_rate": 0.34806629834254144,
+      "rescued_errors": 215,
+      "introduced_errors": 0
+    },
+    "narrow": {
+      "escalate_classes": [
+        "ANG",
+        "DIS"
+      ],
+      "standard_classes": [
+        "NEU",
+        "HAP",
+        "SAD",
+        "FEA"
+      ],
+      "confusion": {
+        "true_positive": 345,
+        "false_negative": 45,
+        "false_positive": 167,
+        "true_negative": 585
+      },
+      "accuracy": 0.8143607705779334,
+      "balanced_accuracy": 0.8312704582651391,
+      "escalate_recall": 0.8846153846153846,
+      "escalate_precision": 0.673828125,
+      "false_alarm_rate": 0.2220744680851064,
+      "rescued_errors": 216,
+      "introduced_errors": 0
+    }
+  }
+}
