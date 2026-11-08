@@ -157,3 +157,6 @@ report sections. The brief asks for per-author contribution.)_
 | 2026-11-07 16:22 | `app.py` | Claude Code (Edit) | code generation |
 | 2026-11-07 16:30 | `prototype_wide_layout.py` | Claude Code (Write) | code generation |
 | 2026-11-07 16:33 | `tests\test_inference.py` | Claude Code (Edit) | code generation |
+| 2026-11-08 11:51 | `README.md` | Claude Code (Write) | code generation |
+| 2026-11-08 11:51 | `README.md` | Claude Code (Edit) | code generation |
+| 2026-11-08 11:56 | `README.md` | Claude Code (Edit) | code generation |
